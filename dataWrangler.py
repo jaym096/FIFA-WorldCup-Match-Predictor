@@ -25,11 +25,11 @@ def getData(argument):
     #as it does not includes matches of wc 2018
 
     #Data from football-data.co.uk
-    raw_data = pd.read_excel("internationals.xlsx", sheet_name=None)
+    raw_data = pd.read_excel("data/internationals.xlsx", sheet_name=None)
     raw_wcData = raw_data['World_Cup_2018']
     
     #Data from Kaggle    
-    results = pd.DataFrame(pd.read_csv('results.csv'))
+    results = pd.DataFrame(pd.read_csv('data/results.csv'))
     results = results.drop(['city', 'country'], axis=1)
 
     # Obtained from https://us.soccerway.com/teams/rankings/fifa/?ICID=TN_03_05_01    
@@ -169,27 +169,3 @@ def DataPreprocessor(results, wc_teams, arguments):
     
     return final
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-#    df_teams30 = df_teams30.drop(['home_team','away_team','date', 'tournament', 'match_year'],1)
-
-    
-    # Get dummy variables
-#    results3 = df_teams30
-#    results3 = results3.reset_index()
-#    results3 = results3.drop(columns = ['index'])
-#    dummies = pd.get_dummies(results3, columns = ['winning_team'], drop_first=True)
-#    results3['home_team'] = dummies['winning_team_1']
-#    results3['away_team'] = dummies['winning_team_2']
-    
-    
-#    matches_of_wc18 = wc18
-#    matches_of_wc18 = pd.DataFrame(matches_of_wc18)
-#    matches_of_wc18 = matches_of_wc18['Home'].replace(['South Korea'], 'Korea Republic')    
