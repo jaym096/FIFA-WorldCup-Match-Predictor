@@ -33,7 +33,7 @@ def getData(argument):
     results = results.drop(['city', 'country'], axis=1)
 
     # Obtained from https://us.soccerway.com/teams/rankings/fifa/?ICID=TN_03_05_01    
-    ranking = pd.read_csv('fifa_rankings.csv')      
+    ranking = pd.read_csv('data/fifa_rankings.csv')      
     
     #We will remove the matches of round of 16 
     #from data (football-data.co.uk)        
@@ -68,14 +68,14 @@ def getData(argument):
 
     #Include Quater and semi final matches
     if(argument == 4):
-        quat = pd.DataFrame(pd.read_csv('Quat_Matches.csv'))
+        quat = pd.DataFrame(pd.read_csv('data/Quat_Matches.csv'))
         quat = quat.drop(['city', 'country'], axis=1)
         results = pd.concat((results, quat))
     if(argument == 5):
-        quat = pd.DataFrame(pd.read_csv('Quat_Matches.csv'))
+        quat = pd.DataFrame(pd.read_csv('data/Quat_Matches.csv'))
         quat = quat.drop(['city', 'country'], axis=1)
         results = pd.concat((results, quat))
-        semi = pd.DataFrame(pd.read_csv('Quat_Matches.csv'))
+        semi = pd.DataFrame(pd.read_csv('data/Quat_Matches.csv'))
         semi = semi.drop(['city', 'country'], axis=1)
         results = pd.concat((results, semi))
     results = results.reset_index(drop=True)
