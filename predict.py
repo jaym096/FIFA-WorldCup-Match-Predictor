@@ -4,7 +4,7 @@ import pandas as pd
 def predict_firstRound(ranking, final_dataset, logreg):
     
     # Obtained from https://fixturedownload.com/results/fifa-world-cup-2018
-    fixtures = pd.read_csv('fixtures.csv')
+    fixtures = pd.read_csv('data/fixtures.csv')
 
     #List for storing the group stage games
     pred_set = []
