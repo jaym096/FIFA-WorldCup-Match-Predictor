@@ -131,9 +131,7 @@ def DataExplorer():
 
 
 def DataPreprocessor(results, wc_teams, arguments):
-    
-    print "helloo from data processor"
-    
+        
     # Filter the 'results' dataframe to show only teams in this(2018) years' world cup, from 1930 onwards
     df_teams_home = results[results['home_team'].isin(wc_teams)]
     df_teams_away = results[results['away_team'].isin(wc_teams)]
